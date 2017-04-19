@@ -38,11 +38,7 @@ while((thisline = br.readLine()) != null){
   String key = sname.substring(islash+1,len);
 //  String[] j=sname.split("|");
   placeholder.add(key);
- //Use to vary the data
-  if(count>1999){
-  break;
-  }
-
+if(count>6999){break;}
 }
 
 
@@ -52,6 +48,7 @@ String newline = System.getProperty("line.separator");
 
 for(int i=0;i<placeholder.size();i++){
    writer.write(placeholder.get(i)+newline);
+   if(i>19){break;}
 }
 writer.close();
 

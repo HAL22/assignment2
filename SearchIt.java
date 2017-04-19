@@ -44,7 +44,7 @@ public class SearchIt{
        bt.insert(new Person(sKey,sline));
        c1++;
        count++;
-       if(c1>2000){break;}
+       if(c1>6999){break;}
      }
 
   }

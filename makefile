@@ -26,7 +26,7 @@ vpath %.class $(BINDIR)
 
 #default rule - will be invoked by make
 
-all: CreateQuery.class BinaryTreeNode.class BTQueueNode.class BTQueue.class BinaryTree.class Person.class BinarySearchTree.class Person.class SearchIt.class TestSearchIt.class PrintIt.class TestPrintIt.class AVLTree.class AVLTreeTest.class 
+all: CreateQuery.class BinaryTreeNode.class BTQueueNode.class BTQueue.class BinaryTree.class Person.class BinarySearchTree.class Person.class SearchIt.class TestSearchIt.class AVLTree.class AVLTreeTest.class SearchAVL.class TestSearchAVL.class
 
 
 
@@ -45,7 +45,7 @@ doc:
 	javadoc -d $(DOCDIR) $(SRCDIR)/*.java ###$(TESTDIR)/TestUtils.java
 
 # Rules for unit testing
-test_classes: all TestBinaryTreeNode.class TestPerson.class TestBinarySearchTree.class TestSuite.class
+test_classes: all TestBinaryTreeNode.class TestPerson.class TestBinarySearchTree.class TestAVLTree.class TestSuite.class
 
 test: test_classes
 	java -ea -cp $(BINDIR):$(JUNIT) org.junit.runner.JUnitCore TestSuite
@@ -60,6 +60,6 @@ report: jacoco.exec
 clean:
 	@rm -f  $(BINDIR)/*.class
 	@rm -f jacoco.exec *.xml *.csv
-	#@rm -Rf coveragereport
+	@rm -Rf coveragereport
 	@rm -Rf doc
 	#@rm test1.txt
